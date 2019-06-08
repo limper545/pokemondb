@@ -1,5 +1,6 @@
-<div *ngIf="(pokemon$ | async) as poke; else loadingPokeDetails">
-  {{ poke.height }}
+<div class="container" *ngIf="(pokemon$ | async) as poke; else loadingPokeDetails">
+  <p><label>Name: </label> {{ poke.name }}</p>
+  <p><label>ID: </label> {{ poke.id }}</p>
 </div>
 
 <ng-template #loadingPokeDetails>

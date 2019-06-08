@@ -8,6 +8,7 @@ import { PokemonComponent } from './dashboard/pokemon/pokemon.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonDetailsComponent } from './dashboard/pokemon-details/pokemon-details.component';
 import { HeaderDataComponent } from './dashboard/header-data/header-data.component';
+import {SlideshowModule} from 'ng-simple-slideshow';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HeaderDataComponent } from './dashboard/header-data/header-data.compone
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SlideshowModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
