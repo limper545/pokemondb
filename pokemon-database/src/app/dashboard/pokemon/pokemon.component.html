@@ -2,6 +2,6 @@
   Name: {{ pokemon.name }}
 </p>
 
-<a class="btn btn-primary" (click)="getDetails()">
+<a class="btn btn-primary" [routerLink]="['/pokemon', pokemon.name]">
   Details
 </a>

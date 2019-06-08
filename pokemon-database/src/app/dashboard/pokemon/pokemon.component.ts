@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Pokemon } from 'src/app/shared/pokemon';
+import { Pokemon, ResultsEntity } from 'src/app/shared/pokemon';
 
 @Component({
   selector: 'pd-pokemon',
@@ -8,17 +8,12 @@ import { Pokemon } from 'src/app/shared/pokemon';
 })
 export class PokemonComponent implements OnInit {
 
-  @Input() pokemon: Pokemon;
+  @Input() pokemon: ResultsEntity;
 
-  @Output() details = new EventEmitter<Pokemon>();
+  @Output() details = new EventEmitter<ResultsEntity>();
   constructor() { }
 
   ngOnInit() {
-  }
-
-  getDetails() {
-    // TODO: Brauche die ID und nicht die ganze URL
-    this.details.emit(this.pokemon);
   }
 
 }

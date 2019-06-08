@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { tap, map, switchMap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { ResultsEntity } from 'src/app/shared/pokemon';
+import { ApiserviceService } from 'src/app/shared/apiservice.service';
+import { PokemonDetails } from 'src/app/shared/pokemon-details';
 
 @Component({
   selector: 'pd-pokemon-details',
@@ -7,9 +13,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokemonDetailsComponent implements OnInit {
 
-  constructor() { }
+  pokemon$: Observable<PokemonDetails>;
+
+  constructor(private route: ActivatedRoute, private apiService: ApiserviceService) { }
 
   ngOnInit() {
+    this.pokemon$ = this.route.paramMap
+    .pipe(
+      map(paramMap => paramMap.get('name')),
+      switchMap(x => this.apiService.getSinglePokemon(x))
+    )
   }
 
 }

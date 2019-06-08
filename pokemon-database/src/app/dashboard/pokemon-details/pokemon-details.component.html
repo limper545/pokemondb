@@ -1,3 +1,7 @@
-<p>
-  pokemon-details works!
-</p>
+<div *ngIf="(pokemon$ | async) as poke; else loadingPokeDetails">
+  {{ poke.height }}
+</div>
+
+<ng-template #loadingPokeDetails>
+  ...Loading
+</ng-template>
