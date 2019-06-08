@@ -1,7 +1,9 @@
-<p>
-  Name: {{ pokemon.name }}
-</p>
+<div [routerLink]="['/pokemon', pokemon.name]" style="cursor: pointer;">
+  <p>
+    Name: {{ pokemon.name }}
+  </p>
 
-<a class="btn btn-primary" [routerLink]="['/pokemon', pokemon.name]">
-  Details
-</a>
+  <!-- <a class="btn btn-primary" [routerLink]="['/pokemon', pokemon.name]">
+    Details
+  </a> -->
+</div>

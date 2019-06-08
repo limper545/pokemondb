@@ -1,8 +1,7 @@
-<div class="container">
   <!-- <pd-header-data></pd-header-data> -->
-
-  <pd-pokemon *ngFor="let pokemon of pokemons" [pokemon]='pokemon'>
-
-  </pd-pokemon>
-
+  <div class="container">
+    <div class="row">
+      <pd-pokemon class="col-4 justify-content-center" *ngFor="let pokemon of pokemons" [pokemon]='pokemon'>
+      </pd-pokemon>
+  </div>
 </div>

@@ -1,16 +1,3 @@
-<!-- <ngb-carousel *ngIf="images" class="container boxSizeSlider">
-  <ng-template ngbSlide>
-    <img src="https://cloud.elbenwald.de/blog/Pokemon/Pokemon-Titel.png" alt="Random first slide">
-
-  </ng-template>
-  <ng-template ngbSlide>
-    <img src="https://cloud.elbenwald.de/blog/Pokemon/Bild%202%20Kanto.jpg" alt="Random second slide">
-
-  </ng-template>
-  <ng-template ngbSlide>
-    <img src="https://cloud.elbenwald.de/blog/Pokemon/Bild%209%20SoulSilver%20Lugia.jpg" alt="Random third slide">
-
-  </ng-template> -->
 <div class="container">
   <slideshow [height]="'300px'" [minHeight]="'300px'" [autoPlay]="true" [showArrows]="true" [showDots]="true"
     [imageUrls]="imageSources" [lazyLoad]="imageSources?.length > 1" [autoPlayWaitForLazyLoad]="true">
