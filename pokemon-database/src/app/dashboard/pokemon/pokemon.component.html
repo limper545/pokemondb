@@ -1,5 +1,9 @@
-<div [routerLink]="['/pokemon', pokemon.name]" style="cursor: pointer;">
-  <p>
-    Name: {{ pokemon.name }}
-  </p>
+<div style="    display: grid;
+justify-content: unset;">
+  <div style="text-align: center">
+    Name: {{ pokemon.name | titlecase }}
+  </div>
+  <button class="btn btn-outline-info waves-effect" [routerLink]="['/pokemon', pokemon.name]">
+    Details
+  </button>
 </div>
