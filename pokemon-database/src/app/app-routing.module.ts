@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
-import { PokemonDetailsComponent } from './dashboard/pokemon-details/pokemon-details.component';
+import { DashboardComponent } from './pokemon-db/dashboard/dashboard.component';
+import { PokemonDetailsComponent } from './pokemon-db/pokemon-details/pokemon-details.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent},
