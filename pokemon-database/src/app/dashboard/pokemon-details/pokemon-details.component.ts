@@ -18,11 +18,23 @@ export class PokemonDetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private apiService: ApiserviceService) { }
 
+  // FIXME: Available Data's
+  // base_experience
+  // height
+  // id
+  // is_default
+  // location_area_encounters
+  // name
+  // order
+  // weight
+
+
   ngOnInit() {
     this.pokemon$ = this.route.paramMap
       .pipe(
         map(paramMap => paramMap.get('name')),
         switchMap(x => this.apiService.getSinglePokemon(x)
         ));
+        console.log(this.pokemon$);
   }
 }

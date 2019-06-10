@@ -1,8 +1,37 @@
-<div class="container" *ngIf="(pokemon$ | async) as poke; else loadingPokeDetails">
-  <p><label>Name: </label> {{ poke.name }}</p>
-  <p><label>ID: </label> {{ poke.id }}</p>
+<ng-container *ngIf="pokemon$ | async as pokemon">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <span class="headerDetailsData">
+          <h3>{{pokemon.name | titlecase }} details</h3>
 
-<ng-template #loadingPokeDetails>
-  ...Loading
-</ng-template>
-</div>
+          <span class="reviewBox">
+            <div class="starRating">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star-o"></span>
+              <span class="fa fa-star-o"></span>
+            </div>
+            <span class="reviews">41 reviews</span>
+            <button class="likeBtn btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+          </span>
+        </span>
+        <div class="contentTitle">
+          <p class="product-description">This book is about hmm i dont know cus i never read this book before.</p>
+        </div>
+        <div class="content">
+          <div class="row">
+            <div class="col-md-3">ID: {{pokemon.id }}</div>
+            <div class="col-md-3">Base EXP: {{pokemon.base_experience }}</div>
+            <div class="col-md-3">Height: {{pokemon.height }}</div>
+            <div class="col-md-3">Weight: {{pokemon.weight }}</div>
+          </div>
+        </div>
+        <div class="action">
+          <button class="addToFavorite btn btn-default" type="button">Add to favorite</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
