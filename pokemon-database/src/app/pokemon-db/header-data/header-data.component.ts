@@ -1,8 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
-import { } from 'fs'
-const testFolder = './images/';
-const fs = require('fs');
+import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'pd-header-data',
