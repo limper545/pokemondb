@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { tap, map, switchMap, catchError } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
-import { ResultsEntity } from 'src/app/shared/pokemon';
 import { ApiserviceService } from 'src/app/shared/apiservice.service';
 import { PokemonDetails } from 'src/app/shared/pokemon-details';
-import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'pd-pokemon-details',
@@ -18,23 +16,11 @@ export class PokemonDetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private apiService: ApiserviceService) { }
 
-  // FIXME: Available Data's
-  // base_experience
-  // height
-  // id
-  // is_default
-  // location_area_encounters
-  // name
-  // order
-  // weight
-
-
   ngOnInit() {
     this.pokemon$ = this.route.paramMap
       .pipe(
         map(paramMap => paramMap.get('name')),
         switchMap(x => this.apiService.getSinglePokemon(x)
         ));
-        console.log(this.pokemon$);
   }
 }
